@@ -1,0 +1,17 @@
+//빈문자열 없이 출력
+import java.util.Scanner;
+public class Main{
+	public static void main(String[] args)
+	{
+		Scanner scan=new Scanner(System.in);
+		String s=scan.nextLine();
+		
+		char[] ss=s.toCharArray();
+		
+		for(int i=0;i<s.length();i++)
+		{
+			if(ss[i]==' ') continue;
+			System.out.print(ss[i]);
+		}
+	}
+}
