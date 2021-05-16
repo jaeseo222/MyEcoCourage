@@ -1,0 +1,33 @@
+//오른쪽 아래에서부터 위쪽으로 숫자 채우기
+
+import java.util.Scanner;
+
+public class Main{
+	public static void main(String[] args)
+	{
+		Scanner scan=new Scanner(System.in);
+		int n=scan.nextInt();
+		int m=scan.nextInt();
+		
+		int[][] ar=new int[n][m];
+
+		for(int j=m-1,c=1;j>=0;j--)
+		{
+			for(int k=n-1;k>=0;k--)
+			{
+				ar[k][j]=c++;
+			}
+		}	
+		for(int i=0;i<ar.length;i++)
+		{
+			for(int j=0;j<ar[i].length;j++) {
+				System.out.print(ar[i][j]+" ");
+				
+			}
+			System.out.println();
+		}
+		
+		
+		
+	}
+}
