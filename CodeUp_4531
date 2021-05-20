@@ -1,0 +1,25 @@
+//대표 값
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.Scanner;
+import java.util.ArrayList;
+public class Main{
+	public static void main(String[] args)
+	{
+		Scanner scan=new Scanner(System.in);
+		List<Integer> list=new ArrayList();
+		int a=0;
+		for(int i=0;i<5;i++)
+		{
+			list.add(scan.nextInt());
+			a+=list.get(i);
+		}
+		
+		list.sort(null);
+		
+		System.out.println(a/5);
+		System.out.println(list.get(2));
+		
+	}
+}
