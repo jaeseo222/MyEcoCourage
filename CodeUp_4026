@@ -1,0 +1,23 @@
+//중앙값
+import java.util.List;
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+
+public class Main{
+	public static void main(String[] args)
+	{
+		Scanner scan=new Scanner(System.in);
+		List<Integer> list=new ArrayList();
+		
+		for(int i=0;i<5;i++)
+		{
+			list.add(scan.nextInt());		
+		}
+		
+		list.sort(null);
+		
+		System.out.println(list.get(2));
+	}
+}
