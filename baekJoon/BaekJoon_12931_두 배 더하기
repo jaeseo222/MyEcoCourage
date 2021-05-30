@@ -1,0 +1,41 @@
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Scanner;
+import java.util.StringTokenizer;
+
+//12931 두 배 더하기
+public class Main{
+	public static void main(String[] args)
+	{
+		Scanner scan=new Scanner(System.in);
+		int n=scan.nextInt();
+		
+		int[] ar=new int[n];
+		int[] br=new int[n];
+		for(int i=0;i<br.length;i++)
+		{
+			br[i]=scan.nextInt();
+			
+		}
+		int a=0;
+		while(true) {
+			boolean all=true;
+			for(int i=0;i<br.length;i++)
+			{
+				if(br[i]%2==1) {
+					br[i]-=1;
+					a++;
+					br[i]/=2;
+				}
+				else br[i]/=2;
+				if(br[i]!=0) all=false;
+			}
+			if(!all) a++;
+			else break;
+		}
+		
+		System.out.println(a);
+		
+	}
+}
