@@ -1,0 +1,39 @@
+package com.example.ecocourage;
+
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.EditText;
+import android.widget.ListView;
+
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.ListFragment;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class FragmentUseStamp extends ListFragment {
+    private ListView useStampStores;//스탬프사용 가게 리스트뷰
+
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
+        View v=inflater.inflate(R.layout.fragment_usestamp, container, false);
+
+        //스탬프 데이터 저장
+        List<String> myStoreStampData=new ArrayList<>();
+
+        //데이터에 아이템 추가
+        myStoreStampData.add("가게이름");
+        myStoreStampData.add("수아네 수박가게");
+        myStoreStampData.add("재서네 떡볶이집");
+
+        //데이터와 연결해주는 친구 어댑터
+        ArrayAdapter<String> adapter=new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1,myStoreStampData);
+        setListAdapter(adapter);
+
+        return v;
+    }
+}
