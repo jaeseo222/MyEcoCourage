@@ -1,0 +1,49 @@
+package com.example.ecocourage;
+
+import android.content.Context;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.ArrayList;
+
+public class FragmentUseStamp extends Fragment {
+
+    private ArrayList<UseStampStoreData> arrayList;
+    private UseStampAdapter useStampAdapter;
+    private RecyclerView recyclerView;
+    private LinearLayoutManager linearLayoutManager;
+
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
+        View v= inflater.inflate(R.layout.fragment_usestamp,container,false);
+
+        recyclerView =(RecyclerView)v.findViewById(R.id.usestampstore);
+        linearLayoutManager=new LinearLayoutManager(getActivity());
+        recyclerView.setLayoutManager(linearLayoutManager);
+        arrayList =new ArrayList<>();
+
+        useStampAdapter =new UseStampAdapter(arrayList);
+        recyclerView.setAdapter(useStampAdapter);
+
+        UseStampStoreData useStampStoreData=new UseStampStoreData("수아네수박가게","수아마음속",5);
+        arrayList.add(useStampStoreData);
+        useStampAdapter.notifyDataSetChanged();//새로고침
+
+
+        Button btn_useStamp=(Button)v.findViewById(R.id.useButton);
+        btn_useStamp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //activity.onFragmentChange(0);//버튼 구현
+            }
+        });
+
+        return v;
+    }
+}
