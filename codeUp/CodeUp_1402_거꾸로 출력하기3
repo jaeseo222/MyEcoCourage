@@ -1,0 +1,26 @@
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Scanner;
+import java.util.StringTokenizer;
+
+//1402 거꾸로 출력하기3
+public class Main{
+	public static void main(String[] args)
+	{
+		Scanner scan=new Scanner(System.in);
+		int n=scan.nextInt();
+		ArrayList<Integer> ar=new ArrayList();
+		for(int i=0;i<n;i++)
+		{
+			ar.add(scan.nextInt());
+		}
+		
+		for(int i=ar.size()-1;i>=0;i--)
+		{
+			System.out.print(ar.get(i)+" ");
+		}
+		
+		
+	}
+}
